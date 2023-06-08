@@ -6,7 +6,7 @@ import { addProduct } from "../state/cartSlice";
 import { reset } from "../state/counterSlice";
 import { Counter } from "../components/Counter";
 import { useEffect, useState } from "react";
-import { BsFillCheckCircleFill } from 'react-icons/bs'
+import { BsFillCheckCircleFill, BsFillBagFill } from 'react-icons/bs'
 import { Container, Image, Button, Col, Row, Badge, Spinner, Toast } from 'react-bootstrap';
 
 
@@ -62,7 +62,7 @@ const Product = () => {
 
     return (
         <>
-        <Container>
+        <Container className="mt-4 p-4 rounded shadow-sm bg-light">
         <h1>{data.title}</h1>
         <Row className="g-3 py-3 d-flex">
         <Col xs={12} sm={6} md={6}>
@@ -71,7 +71,7 @@ const Product = () => {
         </Col>
         </Col>
         <Col xs={12} sm={6} md={6} className="d-flex flex-column justify-content-between">
-        <Container className="mb-3">
+        <Container className="my-3">
         <p>{data.description}</p>
         <p className="fs-3 mb-0">${data.discountedPrice}</p>
         {data.discountedPrice < data.price && (
@@ -86,7 +86,7 @@ const Product = () => {
           handleAdd();
           setShow(true)
           dispatch(reset());
-        }}> + Add to cart</Button>
+        }}> <BsFillBagFill/> Add to cart</Button>
         </div>
         <Toast className="mt-2" onClose={() => setShow(false)} show={show} delay={2000} autohide>
           <Toast.Body><BsFillCheckCircleFill size="20px" className="mx-1" color="green"/>Product successfully added to cart</Toast.Body>

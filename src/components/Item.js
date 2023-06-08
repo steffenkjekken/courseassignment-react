@@ -11,7 +11,7 @@ export const Item = ({product}) => {
 
   return (
     <Col xs={6} sm={6} md={4}>
-    <Card className='align-items-center h-100'>
+    <Card className='align-items-center glossme h-100'>
         <Link to={`/products/${product.id}`}
         style={{ 
           textDecoration:'none',

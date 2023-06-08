@@ -28,7 +28,7 @@ if (totalNumber === 0) {
 else
 
   return (
-    <Container className="pb-2" style={{
+    <Container className="my-4 pb-2 shadow-sm bg-light rounded" style={{
         maxWidth: "760px"
     }}>
         {cart.products.map((item, idx) => {
